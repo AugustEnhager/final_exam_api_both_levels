@@ -1,7 +1,9 @@
-describe 'POST /api/comments', type: :request do
+describe 'POST /api/articles/:article_id/comments', type: :request do
+  let(:article) { create(:article) }
+
   describe 'successfully' do
     before do
-      post '/api/comments', params: {
+      post '/api/articles/:article_id/comments', params: {
         comment: {
           body: 'I am the comments body.'
         }
